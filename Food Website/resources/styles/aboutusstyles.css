@@ -1,0 +1,29 @@
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 90%;
+    height: 700px;
+    margin: 0 auto;
+    background-color: rgba(233, 235, 229, 0.9);
+    border-radius: 2%;
+}
+
+.container .teamMembers {
+    width: 90%;
+    height: 20%;
+    margin-top: 2%;
+    background-color: cornflowerblue;
+    border-radius: 1%;
+}
+
+.teamPic {
+    width: 15%;
+    height: 85%;
+    margin-top: 1%;
+    margin-left: 1%;
+    background-color: black;
+    opacity: 70%;
+    border-radius: 10%;
+}
