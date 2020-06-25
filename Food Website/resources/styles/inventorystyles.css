@@ -1,0 +1,29 @@
+
+h2 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 2em;
+    letter-spacing: .5em;
+    text-align: center;
+    position: relative;
+    top: 25px;
+    line-height: 5px;
+    text-decoration: underline;
+}
+
+.container {
+    display: flex;
+    width: 90%;
+    margin: 0 auto;
+    height: 600px;
+    background-color: whitesmoke;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.inside-box {
+    text-align: center;
+    width: 30%;
+    height: 30%;
+    background-color: rgba(252, 235, 8, 0.425);
+}
