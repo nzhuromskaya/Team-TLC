@@ -1,11 +1,12 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Leftover SecondLife</title>
-    <link rel="stylesheet" href="./resources/styles/styles.css" type="text/css">
-    <link rel="stylesheet" href="./resources/styles/indexstyles.css" type="text/css">
+    <link rel="stylesheet" href="{% static 'resources/styles/styles.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'resources/styles/indexstyles.css' %}" type="text/css">
 </head>
 <body>
 
@@ -14,10 +15,10 @@
     <div class="banner"> Leftover SecondLife</div>
     <div class ="navigation">
         <nav>
-            <span class ="nav1"> <a href= "index.html">Home</a></span>
-            <span class="nav1"> <a href="popularRecipes.html">Popular Recipes </a></span>
-            <span class="nav1"> <a href ="aboutUs.html">About Us</a></span>
-            <span class="nav1"> <a href="login.html">Login</a></span>
+            <span class ="nav1"> <a href="index">Home</a></span>
+            <span class="nav1"> <a href="popularRecipes">Popular Recipes </a></span>
+            <span class="nav1"> <a href ="aboutUs">About Us</a></span>
+            <span class="nav1"> <a href="login">Login</a></span>
     </div>
 
     </nav>
