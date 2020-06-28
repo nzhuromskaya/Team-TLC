@@ -25,7 +25,7 @@ SECRET_KEY = '&d8ksplh!#)!@%ysyzcw=wpeq=vqds3)9smlx%=6#(5m8*4y+&'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['ec2-3-128-94-26.us-east-2.compute.amazonaws.com']
+ALLOWED_HOSTS = ['ec2-3-136-17-82.us-east-2.compute.amazonaws.com']
 
 
 # Application definition
@@ -54,7 +54,7 @@ ROOT_URLCONF = 'my_test_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['home/ubuntu/myproject/templates/Team-TLC'],
+        'DIRS': ['home/ubuntu/Team-TLC/myproject/templates/'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
