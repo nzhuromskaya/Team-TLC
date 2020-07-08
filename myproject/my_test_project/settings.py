@@ -25,12 +25,13 @@ SECRET_KEY = '&d8ksplh!#)!@%ysyzcw=wpeq=vqds3)9smlx%=6#(5m8*4y+&'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['ec2-3-136-17-82.us-east-2.compute.amazonaws.com']
+ALLOWED_HOSTS = ['ec2-3-133-155-39.us-east-2.compute.amazonaws.com']
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'new.apps.NewConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -118,5 +119,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = os.path.join(BASE_DIR, "static/")
 STATIC_ROOT = os.path.join(BASE_DIR, "static/")
