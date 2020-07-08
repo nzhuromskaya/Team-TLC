@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SecondLife - Popular Recipes</title>
+    <title>SecondLife - Login</title>
     <link rel="stylesheet" href="./resources/styles/styles.css" type="text/css">
-    <link rel="stylesheet" href="./resources/styles/inventorystyles.css" type="text/css">
+    <link rel="stylesheet" href="./resources/styles/loginstyles.css" type="text/css">
+    <script src="login.js"></script>
 </head>
 <body>
 
@@ -25,31 +26,25 @@
 
 <!-- Main page information starts here -->
 <main>
-    <h2>Inventory</h2>
-    <div class = "container-holder">
-        <div class = "container">
-            <div class ="inside-box">
-                <h3>Box #1</h3>
-            </div>
-            <div class ="inside-box">
-                <h3>Box #2</h3>
-            </div>
-            <div class ="inside-box">
-                <h3>Box #3</h3>
-            </div>
-            <div class ="inside-box">
-                <h3>Box #4</h3>
-            </div>
-            <div class ="inside-box">
-                <h3>Box #5</h3>
-            </div>
-            <div class ="inside-box">
-                <h3>Box #6</h3>
-            </div>
-        </div>
-    </div>
+
 </main>
-    
+    <form action="index.html" method="POST">
+        <div class="img-container">
+            <img src="/Food Website/resources/images/avatarpgn.png" alt="">
+        </div>
+        <div class="container">
+
+            <label for="username">Username: <br> </label>
+            <input type="text" name ="uname" placeholder="Enter username" id ="username">
+            <br>
+            <label for="password">Password: <br></label>
+            <input type="password" name="passw" placeholder ="Enter password" id ="password">
+            <br>
+            <input type="submit" name="submitBtn" value="Login" onclick ="onSubmit()">
+        
+        </div>
+    </form>
+
 
 <!-- Website Footer information starts here -->
 <footer>
