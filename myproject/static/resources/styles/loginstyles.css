@@ -1,3 +1,30 @@
 .container {
-    text-align: center;
+    text-align:  center;
 }
+
+form {
+    border: 3px solid #f1f1f1;
+    padding: 2%;
+    width: 50%;
+    margin: 0 auto;
+    margin-bottom: 3%;
+}
+
+input[type=text], input[type=password] {
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+
+
+  .img-container {
+    text-align: center;
+    margin: 24px 0 12px 0;
+  }
+
+  .img-container img {
+      width: 25%;
+  }

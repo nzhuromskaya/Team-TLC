@@ -7,7 +7,7 @@
     <title>SecondLife - Login</title>
     <link rel="stylesheet" href="{% static 'resources/styles/styles.css' %}" type="text/css">
     <link rel="stylesheet" href="{% static 'resources/styles/loginstyles.css' %}" type="text/css">
-    <script src="{% static 'login.js' %}"></script>
+    <script src="login.js"></script>
 </head>
 <body>
 
@@ -16,7 +16,7 @@
     <div class="banner"> Leftover SecondLife</div>
     <div class ="navigation">
         <nav>
-            <span class ="nav1"> <a href="index">Home</a></span>
+            <span class ="nav1"> <a href= "index">Home</a></span>
             <span class="nav1"> <a href="popularRecipes">Popular Recipes </a></span>
             <span class="nav1"> <a href ="aboutUs">About Us</a></span>
             <span class="nav1"> <a href="login">Login</a></span>
@@ -29,18 +29,23 @@
 <main>
 
 </main>
-<div class="container">
-    <form action="index">
-        <label for="">Username: </label>
-        <input type="text" id ="username">
-        <br>
-        <label for="password">Password: </label>
-        <input type="text" id ="password">
-        <br>
-        <input type="submit" value="Submit" onclick ="onSubmit()">
+    <form action="index.html" method="POST">
+        <div class="img-container">
+		<img src="{% static 'resources/images/avatarpgn.png' %}" alt="">
+        </div>
+        <div class="container">
+
+            <label for="username">Username: <br> </label>
+            <input type="text" name ="uname" placeholder="Enter username" id ="username">
+            <br>
+            <label for="password">Password: <br></label>
+            <input type="password" name="passw" placeholder ="Enter password" id ="password">
+            <br>
+            <input type="submit" name="submitBtn" value="Login" onclick ="onSubmit()">
+        
+        </div>
     </form>
 
-</div>
 
 <!-- Website Footer information starts here -->
 <footer>
@@ -49,5 +54,4 @@
 </footer>
 
 </body>
-
 </html>

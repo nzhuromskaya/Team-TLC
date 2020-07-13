@@ -15,3 +15,9 @@ def popularRecipesPage(request):
 
 def loginPage(request):
     return render(request, 'login.html')
+
+def usPage(request):
+    return render(request, 'userP1.html')
+
+def ind2Page(request):
+    return render(request, 'index2.html')
