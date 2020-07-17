@@ -67,8 +67,18 @@
 
 
     <!-- Process user input-->
-    <form action="userP1.html" method="POST">
+    <!--- <form action="userP1.html" method="POST">
         <textarea name="recipe-desc" id="recipe-desc" cols="30" rows="10"></textarea>
         <button type ="submit" name="submitBtn" onclick ="onSubmit()">Submit:</button>
+    </form> --->
+
+    <form method="POST">
+	    {% csrf_token %}
+	    <textarea  name="content" id="content" cols="30" rows="10"></textarea>
+	    <!--- <textarea cols="30" rows="10"></textarea> --->
+	    <button type="submit">Search</button>
+	    <h2>
+		    {{ text|linebreaksbr }}
+	    </h2>
     </form>
 </main>

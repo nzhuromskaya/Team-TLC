@@ -29,7 +29,9 @@
 <main>
 
 </main>
-    <form action="index.html" method="POST">
+    <form action="userP1" method="POST">
+	    {% csrf_token %}
+	    {{ form }}
         <div class="img-container">
 		<img src="{% static 'resources/images/avatarpgn.png' %}" alt="">
         </div>
