@@ -17,11 +17,15 @@ html {
     font-size: 16px;
 }
 
+body {
+    margin: 0;
+}
+
 .banner {
     color: hsl(0, 100%, 61%);
-    background-color: whitesmoke;
+    background-color: white;
     text-align: center;
-    font-size: 3em;
+    font-size: 4em;
     line-height: 2em;
     font-family: "Playfair Display"
 }
@@ -31,16 +35,19 @@ html {
 }
 
 .navigation {
+    position: relative;
+    bottom: 30px;
     width: 100%;
     text-align: center;
-    background-color: hsla(0, 100%, 61%, 60%);
+    background-color:white;
     margin: 1em 0;
+    border-bottom: .10em dotted black;
 }
 
 .navigation a {
     color: black;
     text-decoration: none;
-    padding: 0 4%;
+    padding: 0 7%;
     text-transform: uppercase;
     font-family: 'Montserrat', sans-serif;
 }
