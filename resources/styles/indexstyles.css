@@ -1,19 +1,46 @@
+h2 {
+    position: relative;
+    left: 5%;
+}
+
 .container
 {
     display: flex;
     flex-wrap: wrap;
-    width: 90%;
+    width: 95%;
     height: 700px;
-    background-color: gainsboro;
-    opacity: 30%;
+    margin: 0 auto;
+}
+
+.userGreet {
+    position: relative;
+    right: 25%;
+    top: 15%;
+    text-decoration: honeydew;
     margin: 0 auto;
 }
 
 .recipePic {
-    width: 40%;
-    height: 30%;
-    margin: 3%;
-    background-color:rgb(57, 163, 216)
+    width: 90%;
+    height: 45%;
+    background-color: rgb(57, 163, 216, 0.3);
+    margin: 0 auto;
+    margin-top: -7%;
+}
+
+.picContainer {
+    max-width: 100%;
+    max-height: 100%;
+    position: relative;
+    width: 50%;
+    height: 100%;
+    left: 50% ;
+    overflow: hidden;
+    background-color: aquamarine;
+}
+
+.picContainer img  {
+    max-width: 100%;
 }
 
 .recipeDesc {
@@ -21,5 +48,51 @@
     height: 50%;
     margin-left: 3%;
     background-color: purple;
+    opacity: 30%;
+    margin: 0 auto;
+}
 
+.narrow {
+    width: 75%;
+    margin: 0 auto;
+    padding-top: 2rem;
+}
+
+.jumbotron {
+    /* border-radius: 0; */
+    padding: 3rem 0 2rem;
+}
+
+h3.heading {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding-bottom: 1.5rem;
+}
+
+.heading-underline {
+    width: 3rem;
+    height: .2rem;
+    background-color: salmon;
+    margin: 0 auto 2rem ;
+}
+
+/* Recipe Option */
+
+.recipeOption img {
+    max-width: 100%;
+    transition: transform .5s ease;
+
+}
+.recipeOption img:hover {
+    transform: scale(1.1);
+    cursor: zoom-in;
+}
+
+.row.no-padding [class*=col-] {
+    padding: 0;
+}
+
+.recipeOption {
+    overflow: hidden;
 }

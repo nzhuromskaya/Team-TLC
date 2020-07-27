@@ -95,11 +95,13 @@ def getRecipe(request):
            # seperated=''
            # instruct=''
            # temp=''
+            counter = 0
 
             for i in res:
                 for key, value in i.items():
+                    """
                     if key == 'title':
-                        s += 'Name: ' + str(value) + '\n  \tInstructions: \n'
+                        s += 'Name: ' + str(value) + '\n  \tInstructions: ' + str(counter) + '\n'
                     elif key == 'instructions':
                         #s += str(value) + '\n'
                         count = 1
@@ -112,7 +114,13 @@ def getRecipe(request):
                                 temp += "\t\t" + str(count) + ". " + seperated + '.\n'
                                 count += 1
                         s += temp + '\n'
-
+                    """
+                    if key == 'image':
+                        s += str(value)
+                if(counter == 0):
+                    break
+                else:
+                    counter = counter + 1
             text = s
             args = {'form': form, 'text': text}
     return render(request, 'userP1.html', args)
