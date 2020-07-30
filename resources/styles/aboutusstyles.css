@@ -15,7 +15,8 @@
     height: 40%;
     margin-top: 2%;
     margin-bottom: 5%;
-    background-image: url(../images/aboutUsBackgroundPic.jpg); 
+    /* background-image: url(../images/aboutUsBackgroundPic.jpg);  */
+    background-color: hsl(0, 100%, 61%);
 }
 
 
@@ -29,7 +30,7 @@
 
 .teamDesc {
     position: relative;
-    width: 5%;
+    width: 30%;
     left: 55%;
     bottom: 95%;
     opacity: 100%;

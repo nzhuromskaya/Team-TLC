@@ -3,4 +3,18 @@ form textarea, form button{
     margin: 0 auto;
 }
 
+input.form-control[type=text]:focus:not([readonly]) {
+    border-bottom: 1px solid hsl(0, 100%, 61%);
+    box-shadow: 0 1px 0 0 hsl(0, 100%, 61%);
+    border-top: hidden;
+  }
+  
 
+
+input.form-control[type=text] {
+    border-bottom: 1px solid hsl(0, 100%, 61%);
+    box-shadow: 0 1px 0 0 hsl(0, 100%, 61%);
+    border-top: hidden;
+    border-left: hidden;
+    border-right: hidden;
+  }
