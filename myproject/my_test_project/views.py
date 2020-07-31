@@ -2,6 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from .forms import userP1form
 from django import forms
+from .models import Links
 import http.client
 import urllib.parse
 import json
@@ -10,6 +11,9 @@ from django.contrib.auth.forms import UserCreationForm
 
 def homepage(request):
     return render(request, 'index.html')
+
+def signUp(request):
+    return render(request, 'signUp.html')
 
 def inventory(request):
     return render(request, 'inventory.html')
@@ -32,10 +36,22 @@ def signup(request):
             raw_password = form.cleaned_data.get('password1')
             user = authenticate(username=username, password=raw_password)
             login(request, user)
-            return redirect('userP1')
+            return redirect('/userP1')
     else:
         form = UserCreationForm()
     return render(request, 'signup.html', {'form': form})
+
+def login_auth(request):
+    #render(request, 'login.html')
+    #print('testing!')
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+            return redirect('/userP1')
+    return render(request, 'login.html')
 
 def usPage(request):
     return render(request, 'userP1.html')
@@ -46,7 +62,18 @@ def ind2Page(request):
 def getRecipe(request):
     form = userP1form()
     args = {'form': form}
+
+    link1 = Links()
+    link1.img = ''
+    link2 = Links()
+    link3 = Links()
+    link4 = Links()
+    link5 = Links()
+
+    links = [link1, link2, link3, link4, link5]
+
     if request.method == "POST":
+
         form = userP1form(request.POST)
         if form.is_valid():
             text = form.cleaned_data['content']
@@ -99,11 +126,11 @@ def getRecipe(request):
 
             for i in res:
                 for key, value in i.items():
-                    """
+                    '''
                     if key == 'title':
-                        s += 'Name: ' + str(value) + '\n  \tInstructions: ' + str(counter) + '\n'
+                        s += 'Name: ' + str(value) + '\n'
                     elif key == 'instructions':
-                        #s += str(value) + '\n'
+                        s += 'Instructions: \n'
                         count = 1
                         temp='' 
                         instruct = str(value)
@@ -114,13 +141,22 @@ def getRecipe(request):
                                 temp += "\t\t" + str(count) + ". " + seperated + '.\n'
                                 count += 1
                         s += temp + '\n'
-                    """
+                    elif key == 'image':
+                        s += 'Image: ' + str(value) + '\n' 
+                    '''
                     if key == 'image':
                         s += str(value)
-                if(counter == 0):
+                        links[counter].img = str(value)
+                    elif key == 'sourceUrl':
+                        links[counter].url = str(value)
+
+                        
+                if(counter == 4):
                     break
                 else:
                     counter = counter + 1
+
             text = s
-            args = {'form': form, 'text': text}
+            #args = {'form': form, 'text': text}
+            args = {'form': form, 'links': links}
     return render(request, 'userP1.html', args)

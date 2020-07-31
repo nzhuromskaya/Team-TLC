@@ -78,7 +78,11 @@
 	    <!--- <textarea cols="30" rows="10"></textarea> --->
 	    <button type="submit">Search</button>
 	    <h2>
-		    <img src={{ text|linebreaksbr }}>
+            {% for link in links %}
+            <a href= {{ link.url|linebreaksbr }} >
+                <img src= {{ link.img|linebreaksbr }}>
+            </a>
+            {% endfor %}
 	    </h2>
     </form>
 </main>

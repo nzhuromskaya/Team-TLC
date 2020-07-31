@@ -1,4 +1,4 @@
-{% load static %}
+{%load static%}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,7 +29,7 @@
 <main>
 
 </main>
-    <form action="userP1" method="POST">
+    <form method="POST">
 	    {% csrf_token %}
 	    {{ form }}
         <div class="img-container">
@@ -38,12 +38,13 @@
         <div class="container">
 
             <label for="username">Username: <br> </label>
-            <input type="text" name ="uname" placeholder="Enter username" id ="username">
+            <input type="text" name ="username" placeholder="Enter username" id ="username">
             <br>
             <label for="password">Password: <br></label>
-            <input type="password" name="passw" placeholder ="Enter password" id ="password">
+            <input type="password" name="password" placeholder ="Enter password" id ="password">
             <br>
-            <input type="submit" name="submitBtn" value="Login" onclick ="onSubmit()">
+            <p>Not a member? <a href="signUp">Sign Up</a></p>
+	    <input type="submit" name="submitBtn" value="Login">
         
         </div>
     </form>

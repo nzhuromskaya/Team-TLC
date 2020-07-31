@@ -1,4 +1,4 @@
-{%load static%}  
+{%load static%}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,7 +31,7 @@
 
 
 <!-- Start of Image Slider -->
-<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="7000">
+<div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel" data-interval="7000">
     <ol class="carousel-indicators">
         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active">
         </li>
@@ -42,7 +42,7 @@
     </ol>
     <div class="carousel-inner" role="listbox">
         <!-- Slide 1 -->
-	<div class="carousel-item active" style="background-image: url({% static '/resources/images/aboutUsBackgroundPic.jpg' %})">
+	<div class="carousel-item active" style="background-image: url({% static 'resources/images/aboutUsBackgroundPic.jpg' %})">
             <div class="carousel-caption text-center">
                 <h1>Recipe Name</h1>
                 <h3>Short Description</h3>

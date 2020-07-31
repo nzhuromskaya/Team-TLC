@@ -25,10 +25,11 @@ urlpatterns = [
     path('inventory', views.inventory),
     path('aboutUs', views.aboutUsPage),
     path('popularRecipes', views.popularRecipesPage),
-    path('login', views.loginPage),
+    path('login', views.login_auth),
     path('index', views.homepage),
     path('userP1', views.getRecipe),
     path('index2', views.ind2Page),
     path('signup', views.signup),
+    path('signUp', views.signUp),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 

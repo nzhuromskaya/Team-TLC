@@ -1,7 +1,6 @@
-.container {
-    text-align:  center;
+body {
+    font-family: Arial, Helvetica, sans-serif;
 }
-
 form {
     border: 3px solid #f1f1f1;
     padding: 2%;
@@ -11,7 +10,7 @@ form {
 }
 
 input[type=text], input[type=password] {
-    width: 30%;
+    width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
@@ -19,12 +18,27 @@ input[type=text], input[type=password] {
     box-sizing: border-box;
   }
 
+label[for="username"], label[for="password"] {
+    display: block;
+    text-align: left;
+    font-weight: 700;
+    }
 
-  .img-container {
+.container {
+        text-align:  center;
+    }
+
+.img-container {
     text-align: center;
     margin: 24px 0 12px 0;
   }
 
-  .img-container img {
+.img-container img {
       width: 25%;
   }
+
+form p {
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    line-height: .02em;
+}
