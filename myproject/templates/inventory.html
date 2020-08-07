@@ -28,27 +28,59 @@
 <main>
     <h2>Inventory</h2>
     <div class = "container-holder">
+	    <div class = "container">
+		    <div class = "inside-box">
+			    <h3>My Inventory</h3>
+				
+			    <table class="ricTable">
+					{%for foo in ingredien%}
+					{%if foo.user_name == n%}
+					<tr>
+					<td>{{foo.name}}</td><td>{{foo.quantity}}</td>
+					</tr>
+					{% endif %}
+					{% endfor %}
+			    </table>
+		    </div>
+	    </div>
+    </div>
+    <div class = "container-holder">
+	    <div class="container">
+	    	<div class = "inside-box">
+    			<form method="POST">
+                		{% csrf_token %}
+                		<h3>Add a Inventory</h3>
+                		<label>Food Name</label>
+                		<input type="text" name="foodname" id="foodname"/>
+                		<label>Quantity</label>
+                		<input type="text" name="quant" id="quant"/>
+                		<button type="submit">Submit</button>
+     			</form>
+	    	</div>
+	    </div>
+    </div>
+     <!---
+    <div class = "container-holder">
         <div class = "container">
             <div class ="inside-box">
-                <h3>Box #1</h3>
+		<form method="POST">
+		<h3>Add a Inventory</h3>
+		<label>Food Name</label>
+		<input type="text" name="foodname" id="foodname"/>
+		<label>Quantity</label>
+		<input type="text" name="quant" id="quant"/>
+		<button type="submit">Submit</button>
+		</form>
+		<label>Measurement</label>
+		<select>
+		<option value="grams">Grams</option>
+		<option value=ounces">Ounces</option>
+		</select>
             </div>
-            <div class ="inside-box">
-                <h3>Box #2</h3>
-            </div>
-            <div class ="inside-box">
-                <h3>Box #3</h3>
-            </div>
-            <div class ="inside-box">
-                <h3>Box #4</h3>
-            </div>
-            <div class ="inside-box">
-                <h3>Box #5</h3>
-            </div>
-            <div class ="inside-box">
-                <h3>Box #6</h3>
-            </div>
+            <div>
         </div>
     </div>
+    --->
 </main>
     
 

@@ -8,12 +8,24 @@ import urllib.parse
 import json
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
+from django.apps import apps
 
 def homepage(request):
     return render(request, 'index.html')
 
 def signUp(request):
-    return render(request, 'signUp.html')
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            username = form.cleaned_data.get('username')
+            raw_password = form.cleaned_data.get('password1')
+            user = authenticate(username=username, password=raw_password)
+            login(request, user)
+            return redirect('/userP1')
+    else:
+        form = UserCreationForm()
+    return render(request, 'signUp.html', {'form': form})
 
 def inventory(request):
     return render(request, 'inventory.html')
@@ -43,7 +55,7 @@ def signup(request):
 
 def login_auth(request):
     #render(request, 'login.html')
-    #print('testing!')
+    # print('testing!')
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
@@ -52,6 +64,26 @@ def login_auth(request):
             login(request, user)
             return redirect('/userP1')
     return render(request, 'login.html')
+
+def inventory(request):
+    if request.user.is_authenticated:
+        Ingredient = apps.get_model('new', 'Ingredient')
+        data = Ingredient.objects.all()
+        food = {
+                'ingredien': data,
+                'n': request.user.username
+                }
+        if request.method == 'POST':
+            ingredient = Ingredient()
+            ingredient.name = request.POST['foodname']
+            ingredient.quantity = request.POST['quant']
+            ingredient.user_name = request.user.username
+            ingredient.save()
+            return render(request, 'inventory.html', food)
+        return render(request, 'inventory.html', food)
+    else:
+        print("we're not in!")
+    return render(request, 'inventory.html')
 
 def usPage(request):
     return render(request, 'userP1.html')

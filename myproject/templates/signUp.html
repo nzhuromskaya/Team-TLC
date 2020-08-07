@@ -29,20 +29,33 @@
 <main>
 
 </main>
-    <form action="index.html" method="POST">
+    <form  method="POST">
+	{% csrf_token %}
         <div class="img-container">
 		<img src="{% static 'resources/images/avatarpgn.png' %}" alt="">
         </div>
         <div class="container">
-
-            <label for="username">Username: <br> </label>
-            <input type="text" name ="uname" placeholder="Enter username" id ="username">
+	{% for field in form %}
+      	<p>
+        {{ field.label_tag }}<br>
+        {{ field }}
+	{% if field.help_text %}
+          <small style="color: grey">{{ field.help_text }}</small>
+        {% endif %}
+        {% for error in field.errors %}
+          <p style="color: red">{{ error }}</p>
+        {% endfor %}
+      	</p>
+      	{% endfor %}
+        <!---    
+	<label for="username">Username: <br> </label>
+            
             <br>
             <label for="password">Password: <br></label>
-            <input type="password" name="passw" placeholder ="Enter password" id ="password">
+            
             <br>
-            <input type="submit" name="submitBtn" value="Register" onclick ="onSubmit()">
-        
+	    --->
+            <input type="submit" name="submitBtn" value="Register">
         </div>
     </form>
 

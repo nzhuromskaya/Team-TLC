@@ -18,7 +18,7 @@ input[type=text], input[type=password] {
     box-sizing: border-box;
   }
 
-label[for="username"], label[for="password"] {
+label[for="username"], label[for="password"], label[for="password2"] {
     display: block;
     text-align: left;
     font-weight: 700;

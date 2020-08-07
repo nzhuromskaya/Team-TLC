@@ -38,7 +38,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'my_test_project',
 ]
+
+PROJECT_APPS = (
+        'new',
+        )
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -78,7 +83,16 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+    },
+
+    #'inventory': {
+        #'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        #'NAME': 'django_db',
+        #'USER': 'python_dev',
+        #'PASSWORD': 'thompson11',
+        #'HOST': '',
+        #'PORT': '',
+    #},
 }
 
 
