@@ -15,10 +15,6 @@
     <link rel="stylesheet" href="assets/css/styles.css">
     <!-- Bootstrap Link -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script> -->
-
 </head>
 <body>
 
@@ -28,7 +24,7 @@
     <div class ="navigation">
         <nav>
             <span class ="nav1"> <a href= "index.html">Home</a></span>
-            <span class="nav1"> <a href="popularRecipes.html">Popular Recipes </a></span>
+            <span class="nav1"> <a href="popularRecipes.html">Popular Recipes</a></span>
             <span class="nav1"> <a href ="aboutUs.html">About Us</a></span>
             <span class="nav1"> <a href="login.html">Login</a></span>
     </div>
@@ -36,14 +32,15 @@
     </nav>
 </header>
 
+
 <main>
     <div id="wrapper">
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
                 <li class="sidebar-brand"> <a href="#">Home </a></li>
                 <li> <a href="#">Account Info</a></li>
-                <li> <a href="#">Inventory</a></li>
-                <li> <a href="#">Log out</a></li>
+                <li> <a href="./inventory.html">Inventory</a></li>
+                <li> <a href="index.html">Log out</a></li>
             </ul>
         </div>
         <div class="page-content-wrapper">
@@ -62,7 +59,14 @@
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/Sidebar-Menu.js"></script>
 
-
+    <form class="form-inline d-flex justify-content-center md-form form-sm mt-0">
+        <!-- <i class="fas fa-search" aria-hidden="true"></i> -->
+        <input class="form-control form-control-sm mx-auto w-50  " type="text" placeholder="Search"
+          aria-label="Search">
+      </form>
+    
+    <!-- Main page information starts here -->
+    <br>
     <!-- Process user input-->
     <form action="userP1.html" method="POST">
         <textarea name="recipe-desc" id="recipe-desc" cols="30" rows="10"></textarea>

@@ -5,7 +5,8 @@
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    background-color: rgb(111, 211, 211);
+    /* background-color: rgb(111, 211, 211); */
+    border: 1px black solid;
     margin-top: 5%;
 }
 
@@ -20,8 +21,8 @@
 p {
     font-size: 3em;
     text-align: center;
-    line-height: 10px;
-    margin: 2% 0;
+    height: 2em;
+    margin-top: 600px;
 }
 
 .carousel-item {
