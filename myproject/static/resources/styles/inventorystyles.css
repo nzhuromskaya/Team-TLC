@@ -5,24 +5,58 @@ h2 {
     text-align: center;
     position: relative;
     top: 25px;
-    line-height: 5px;
+    line-height: 25px;
     text-decoration: underline;
-}
+    color: black;
+} 
+
+
 
 .container {
     display: flex;
     width: 90%;
     margin: 0 auto;
-    height: 600px;
+    height: 900px;
     background-color: whitesmoke;
     justify-content: space-around;
     flex-wrap: wrap;
     padding: 20px;
 }
 
+.inventory { 
+    display:flex;
+    flex-wrap: wrap;
+    overflow: scroll;
+    min-width: 80%;
+    max-height: 85%;
+    margin:0 auto;
+    justify-content: space-around;
+}
+
 .inside-box {
     text-align: center;
-    width: 30%;
+    width:30%;
     height: 30%;
     background-color: rgba(252, 235, 8, 0.425);
+}
+
+button {
+    border: 1px solid black;
+    width: 45%;
+    font-size: 1.2em;
+    font-weight: 600;
+    background-color: hsla(0, 100%, 61%, 30%);
+    transition-duration: .5s;
+    cursor: pointer;
+    max-height: 20%;
+    
+}
+
+button:hover {
+    background-color: #4CAF50;
+    color: white;
+  }
+
+.AddFeature{
+    display: block;
 }

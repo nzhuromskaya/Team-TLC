@@ -7,9 +7,8 @@
     <title>SecondLife - Popular Recipes</title>
     <link rel="stylesheet" href="{% static 'resources/styles/styles.css' %}" type="text/css">
     <link rel="stylesheet" href="{% static 'resources/styles/popularstyles.css' %}" type="text/css">
-
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 <body>
 
@@ -19,7 +18,7 @@
     <div class ="navigation">
         <nav>
             <span class ="nav1"> <a href= "index">Home</a></span>
-            <span class="nav1"> <a href="popularRecipes">Popular Recipes </a></span>
+            <span class="nav1"> <a href="popularRecipes">Popular Recipes</a></span>
             <span class="nav1"> <a href ="aboutUs">About Us</a></span>
             <span class="nav1"> <a href="login">Login</a></span>
     </div>
@@ -27,8 +26,35 @@
     </nav>
 </header>
 
-<!-- Main page information starts here -->
 
+<!-- Main page information starts here -->
+<br>
+
+<main>
+    <!-- Search box starts here -->
+    <p>Input ingredients to search for a recipe here</p>
+    <div class="container">
+	<form>
+	{%csrf_token%}
+        <input type="text" name="searchVal" id="searchVal" placeholder="Find a recipe">
+	<input type="submit" value="Search">
+        <br>
+        <input type="checkbox" id="vegan" value="vegan" name="diet" onclick="getVal()">
+        <label for="vegan">Vegan</label>
+        <br>
+        <input type="checkbox" id="vegetarian" value="vegetarian" name="diet" onclick="getVal()">
+        <label for="vegetarian">Vegetarian</label>
+        <br>
+        <input type="checkbox" id="gluten free" value="gluten free" name="diet" onclick="getVal()">
+        <label for="gluten free">Gluten free</label>
+        <br>
+        <input type="checkbox" id="dairy free" value="dairy free" name="diet" onclick="getVal()">
+        <label for="dairy free">Dairy free</label>
+	</form>
+    </div>
+    <br> 
+
+</main>
 
 <!-- Start of Image Slider -->
 <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel" data-interval="7000">
@@ -78,35 +104,32 @@
     </div>
 </div>
 <!-- End of image slider -->
-<main>
-    <div class="container">
-        <p>Top Recipes for the Week!</p>
-        <div class="recipeBox">
 
-        </div>
-        <div class="recipeBox">
 
-        </div>
-        <div class="recipeBox">
-
-        </div>
-        <div class="recipeBox">
-
-        </div>
-        <div class="recipeBox">
-
-        </div>
-        <div id="test" class="recipeBox">
-
-        </div>
-    </div>
-    
-</main>
-    
 
 <script src="{% static 'assets/js/jquery.min.js' %}"></script>
 <script src="{% static 'assets/bootstrap/js/bootstrap.min.js' %}"></script>
 
+<script>
+    function getVal(){
+    var val = document.getElementsByName("diet");
+    // let boxStr = document.getElementById("searchVal").value;
+        for(let i = 0; i < val.length; i++) {
+            if(val[i].checked){
+                console.log("hey");
+		let str = document.getElementById("searchVal").value;
+		if(!(str.includes(val[i].value)))
+		    {
+               		 document.getElementById("searchVal").value = document.getElementById("searchVal").value + "," + val[i].value;
+		    }
+            }
+            if(!val[i].checked){
+                let str = val[i].value;
+                document.getElementById("searchVal").value = document.getElementById("searchVal").value.replace("," + str, "");
+            }
+        }
+    }
+</script>
 
 <!-- Website Footer information starts here -->
 <footer>
