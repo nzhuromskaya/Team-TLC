@@ -37,13 +37,14 @@ def aboutUsPage(request):
 
 @login_required
 def recipePage(request):
-    if request.user.is_authenticated:
-        User_Recipe = apps.get_model('new', 'User_Recipe')
-        data = User_Recipe.objects.all()
+    User_Recipe = apps.get_model('new', 'User_Recipe')
+    data = User_Recipe.objects.all()
 
-        rec = {
-                'recip': data,
-                }
+    rec = {
+            'recip': data,
+            }
+
+    if request.user.is_authenticated:
         
         if request.method == 'POST':
                        
