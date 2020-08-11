@@ -27,6 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['ec2-3-133-155-39.us-east-2.compute.amazonaws.com', '3.133.155.39', 'leftoverssecondlife.com', 'lbteamtlc-1162221624.us-east-2.elb.amazonaws.com']
 
+LOGIN_URL = '/login'
 
 # Application definition
 

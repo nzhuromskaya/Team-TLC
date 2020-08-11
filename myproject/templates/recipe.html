@@ -1,0 +1,95 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecondLife - About Us</title>
+    <link rel="stylesheet" href="{% static 'resources/styles/styles.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'resources/styles/userP1.css' %}" type="text/css">
+    <script src="{% static 'login.js' %}"></script>
+
+    <link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/fonts/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/Sidebar-Menu-1.css' %}">
+    <!-- <link rel="stylesheet" href="assets/css/Sidebar-Menu.css"> -->
+    <link rel="stylesheet" href="{% static 'assets/css/styles.css' %}">
+    <!-- Bootstrap Link -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+   <!--
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        -->
+
+</head>
+<body>
+
+
+<!-- Header information starts here -->
+<header>
+    <div class="banner"> Leftover SecondLife</div>
+    <div class ="navigation">
+        <nav>
+            <span class ="nav1"> <a href= "index">Home</a></span>
+            <span class="nav1"> <a href="popularRecipes">Popular Recipes </a></span>
+            <span class="nav1"> <a href ="aboutUs">About Us</a></span>
+            <span class="nav1"> <a href="login">Login</a></span>
+    </div>
+
+    </nav>
+</header>
+
+<main>
+    <div id="wrapper">
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand"> <a href="#">Home </a></li>
+                <li> <a href="#">Account Info</a></li>
+                <li> <a href="inventory">Inventory</a></li>
+                <li> <a href="index">Log out</a></li>
+            </ul>
+        </div>
+        <div class="page-content-wrapper">
+            <div class="container-fluid"><a class="btn btn-link" role="button" id="menu-toggle" href="#menu-toggle"><i class="fa fa-bars"></i></a>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div>
+                            <h1>Menu<small></small></h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+	<form name="addRecipe" id="addRecipe" method="POST">
+		{%csrf_token%}
+		<p>
+		<label>Title</label><input type="text" name="titl" id="titl">
+		<label>Ingredient</label><textarea  name="ingr" id="ingr" cols="30" rows="10"></textarea>
+		<label>Description</label><textarea  name="desc" id="desc" cols="30" rows="10"></textarea>
+		<label>Steps</label><textarea  name="step" id="step" cols="30" rows="10"></textarea>
+		</p>
+		<input type="submit" name="conAdd" id="conAdd" value="Add">
+	</form>
+
+
+	{% for reci in recip%}
+		{% if reci.approved%}
+		<p>
+		{{reci.title}}
+		{{reci.ingredients}}
+		{{reci.description}}
+		{{reci.steps}}
+		{{reci.author}}
+		</p>
+		{% endif  %}
+	{% endfor%}
+    <script src="{% static 'assets/js/jquery.min.js' %}"></script>
+    <script src="{% static 'assets/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'assets/js/Sidebar-Menu.js' %}"></script>
+</main>
+

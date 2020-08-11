@@ -32,8 +32,14 @@
 	    {%for foo in ingredien%}
 	    	{%if foo.user_name == n%}
             	<div class ="inside-box">
-		    <h3>{{foo.name}}</h3> 
-		    <p>{{foo.quantity}}</p>
+			<form name="deleteFood" id="deleteFood" method="POST">
+				{%csrf_token%}
+		    		<h3>{{foo.name}}</h3> 
+		    		<p>{{foo.quantity}}</p>
+				<input type="hidden" name="foodname" value="{{foo.name}}">
+				<input type="hidden" name="quant" value="{{foo.quantity}}">
+				<p><input name="delAmt" id="delAmt" type="text"> <input type="submit" name="conDel" id="conDel" value="Update"></p>
+		  	</form>  
            	</div>
 	   	{% endif %}
 	     {% endfor%}
@@ -51,10 +57,11 @@
             	</div>
         </div>
     </div>
-<form  name="addInventory" id="addInventory" method="POST">
+<form  name="addInventory" id="addInventory" method="POST" style="display: none;">
 	{%csrf_token%}
 	<input type="hidden" name="foodname" id="foodname">
 	<input type="hidden" name="quant" id="quant">
+	<input type="submit" name="conAdd" id="conAdd">
 </form>
 </main>
 
@@ -63,7 +70,8 @@
 	{
 		document.addInventory.foodname.value = document.getElementById("FoodNaming").value;
 		document.addInventory.quant.value = document.getElementById("Quant1").value;
-		document.getElementById("addInventory").submit();
+		document.getElementById("conAdd").click();
+		//document.getElementById("addInventory").submit();
 	}
 </script>
 

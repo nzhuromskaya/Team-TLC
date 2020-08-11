@@ -31,5 +31,6 @@ urlpatterns = [
     path('index2', views.ind2Page),
     path('signup', views.signup),
     path('signUp', views.signUp),
+    path('recipe', views.recipePage),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 

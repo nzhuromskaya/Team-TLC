@@ -4,7 +4,10 @@ from django.db import models
 class Links:
     img: str
     url: str
-
+    title: str
+    instructions: str
+    count: int
+   
 class FoodItem(models.Model):
     name = models.CharField(max_length=32)
     quantity = models.CharField(max_length=64)

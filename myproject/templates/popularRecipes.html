@@ -34,7 +34,7 @@
     <!-- Search box starts here -->
     <p>Input ingredients to search for a recipe here</p>
     <div class="container">
-	<form>
+	<form method="POST">
 	{%csrf_token%}
         <input type="text" name="searchVal" id="searchVal" placeholder="Find a recipe">
 	<input type="submit" value="Search">
@@ -65,36 +65,51 @@
         </li>
         <li data-target="#carouselExampleIndicators" data-slide-to="2">
         </li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="3">
+        </li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="4">
+        </li>
+
     </ol>
     <div class="carousel-inner" role="listbox">
         <!-- Slide 1 -->
-	<div class="carousel-item active" style="background-image: url({% static 'resources/images/aboutUsBackgroundPic.jpg' %})">
+	{% for link in links  %}
+	{% if link.count == 0 %}
+	<div class="carousel-item active" style="background-image: url({{link.img|linebreaksbr}})">
             <div class="carousel-caption text-center">
-                <h1>Recipe Name</h1>
-                <h3>Short Description</h3>
-                <a class="btn btn-outline-light btn-lg" href="#test">Link to Recipe</a>
+		<h1>{{link.title|linebreaksbr}}</h1>
+		<a class="btn btn-outline-light btn-lg" href={{link.url|linebreaksbr}}>Link to Recipe</a>
             </div>
         </div>
+	{% endif  %}
+        <div class="carousel-item" style="background-image: url({{link.img|linebreaksbr}})">
+            <div class="carousel-caption text-center">
+                <h1>{{link.title|linebreaksbr}}</h1>
+                <a class="btn btn-outline-light btn-lg" href={{link.url|linebreaksbr}}>Link to Recipe</a>
+            </div>
+        </div>
+
+	{% endfor %}
         <!-- Slide 2 -->
-        <div class="carousel-item" style="background-color:darkseagreen">
+        <!-- <div class="carousel-item" style="background-color:darkseagreen">
             <div class="carousel-caption text-center">
                 <h1>Recipe Name</h1>
                 <h3>Short Description</h3>
                 <a class="btn btn-outline-light btn-lg" href="#test">Link to Recipe</a>
             </div>
-        </div>
+	</div>-->
 
         <!-- Slide 3 -->
-        <div class="carousel-item" style="background-color:cadetblue">
+       <!-- <div class="carousel-item" style="background-color:cadetblue">
             <div class="carousel-caption text-center">
                 <h1>Recipe Name</h1>
                 <h3>Short Description</h3>
                 <a class="btn btn-outline-light btn-lg" href="#test">Link to Recipe</a>
             </div>
-        </div>
+       </div>-->
         <!-- End Carousel Inner -->
 
-        <!-- Prev and Next Buttons -->
+	<!-- Prev and Next Buttons -->
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         </a>
