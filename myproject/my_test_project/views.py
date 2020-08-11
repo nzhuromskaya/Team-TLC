@@ -35,6 +35,7 @@ def inventory(request):
 def aboutUsPage(request):
     return render(request, 'aboutUs.html')
 
+@login_required
 def recipePage(request):
     if request.user.is_authenticated:
         User_Recipe = apps.get_model('new', 'User_Recipe')
@@ -249,6 +250,7 @@ def usPage(request):
 def ind2Page(request):
     return render(request, 'index2.html')
 
+@login_required
 def getRecipe(request):
     form = userP1form()
     args = {'form': form}
