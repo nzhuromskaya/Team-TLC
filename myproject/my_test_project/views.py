@@ -7,7 +7,7 @@ from .models import Links
 import http.client
 import urllib.parse
 import json
-from django.contrib.auth import login, authenticate
+from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.forms import UserCreationForm
 from django.apps import apps
 from django.contrib.auth.decorators import login_required
@@ -161,12 +161,12 @@ def popularRecipesPage(request):
                     elif key == 'image':
                         s += 'Image: ' + str(value) + '\n'
                     '''
-                    if key == 'image':
+                    if key == 'title':
+                        links[counter].name = str(value)
+                    elif key == 'image':
                         links[counter].img = str(value)
                     elif key == 'sourceUrl':
                         links[counter].url = str(value)
-                    elif key == 'title':
-                        links[counter].title = str(value)
                     elif key == 'instructions':
                         links[counter].instructions = str(value)
 
@@ -253,8 +253,10 @@ def ind2Page(request):
 
 @login_required
 def getRecipe(request):
+
     form = userP1form()
     args = {'form': form}
+
 
     link1 = Links()
     link1.img = ''
@@ -266,6 +268,9 @@ def getRecipe(request):
     links = [link1, link2, link3, link4, link5]
 
     if request.method == "POST":
+        if request.POST.get('log'):
+            logout(request)
+            return redirect('/index')
 
         form = userP1form(request.POST)
         if form.is_valid():
@@ -336,11 +341,16 @@ def getRecipe(request):
                     elif key == 'image':
                         s += 'Image: ' + str(value) + '\n' 
                     '''
-                    if key == 'image':
-                        s += str(value)
+                    if key == 'title':
+                        links[counter].name = str(value)
+                    elif key == 'image':
                         links[counter].img = str(value)
                     elif key == 'sourceUrl':
                         links[counter].url = str(value)
+                    elif key == 'instructions':
+                        links[counter].instructions = str(value)
+
+                links[counter].count = counter
 
                         
                 if(counter == 4):

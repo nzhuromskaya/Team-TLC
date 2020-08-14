@@ -8,6 +8,7 @@
     <title>SecondLife - About Us</title>
     <link rel="stylesheet" href="{% static 'resources/styles/styles.css' %}" type="text/css">
     <link rel="stylesheet" href="{% static 'resources/styles/userP1.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'resources/styles/recipe.css' %}" type="text/css">
     <script src="{% static 'login.js' %}"></script>
 
     <link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap.min.css' %}">
@@ -33,7 +34,7 @@
     <div class ="navigation">
         <nav>
             <span class ="nav1"> <a href= "index">Home</a></span>
-            <span class="nav1"> <a href="popularRecipes">Popular Recipes </a></span>
+            <span class="nav1"> <a href="popularRecipes">Search Recipes </a></span>
             <span class="nav1"> <a href ="aboutUs">About Us</a></span>
             <span class="nav1"> <a href="login">Login</a></span>
     </div>
@@ -48,10 +49,11 @@
                 <li class="sidebar-brand"> <a href="#">Home </a></li>
                 <li> <a href="#">Account Info</a></li>
                 <li> <a href="inventory">Inventory</a></li>
+		<li> <a href="recipe">Add A Recipe</a></li>
                 <li> <a href="index">Log out</a></li>
             </ul>
         </div>
-        <div class="page-content-wrapper">
+        <div class="page-content-wrapper" style="position: fixed;">
             <div class="container-fluid"><a class="btn btn-link" role="button" id="menu-toggle" href="#menu-toggle"><i class="fa fa-bars"></i></a>
                 <div class="row">
                     <div class="col-md-12">
@@ -64,30 +66,32 @@
         </div>
     </div>
 
-
+    <div class="addRecForm">
 	<form name="addRecipe" id="addRecipe" method="POST">
 		{%csrf_token%}
 		<p>
-		<label>Title</label><input type="text" name="titl" id="titl">
-		<label>Ingredient</label><textarea  name="ingr" id="ingr" cols="30" rows="10"></textarea>
-		<label>Description</label><textarea  name="desc" id="desc" cols="30" rows="10"></textarea>
-		<label>Steps</label><textarea  name="step" id="step" cols="30" rows="10"></textarea>
+		<label>Title: </label><input type="text" name="titl" id="titl"> <br>
+		<label>Ingredient: </label><textarea  name="ingr" id="ingr" cols="30" rows="10"></textarea>
+		<label>Description: </label><textarea  name="desc" id="desc" cols="30" rows="10"></textarea>
+		<label>Steps: </label><textarea  name="step" id="step" cols="30" rows="10"></textarea>
 		</p>
-		<input type="submit" name="conAdd" id="conAdd" value="Add">
+		<input type="submit" name="conAdd" id="conAdd" value="Add Recipe">
 	</form>
-
-
+    </div>
+    <h3>Approved Recipes </h3>
+    <div class="approved">
 	{% for reci in recip%}
 		{% if reci.approved%}
 		<p>
-		{{reci.title}}
-		{{reci.ingredients}}
-		{{reci.description}}
-		{{reci.steps}}
+		{{reci.title}} <br>
+		{{reci.ingredients}} <br>
+		{{reci.description}} <br>
+		{{reci.steps}} <br>
 		{{reci.author}}
 		</p>
 		{% endif  %}
 	{% endfor%}
+    </div>
     <script src="{% static 'assets/js/jquery.min.js' %}"></script>
     <script src="{% static 'assets/bootstrap/js/bootstrap.min.js' %}"></script>
     <script src="{% static 'assets/js/Sidebar-Menu.js' %}"></script>

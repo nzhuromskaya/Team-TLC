@@ -8,6 +8,7 @@
   .active-pink .fas, .active-pink-2 .fas {
     color: black;
 }
+
 .container {
     display: flex;
     flex-wrap: wrap;
@@ -39,11 +40,15 @@
 
 .teamDesc {
     position: relative;
-    width: 30%;
+    width: 45%;
     left: 55%;
     bottom: 95%;
     opacity: 100%;
 } 
+
+.teamDesc h3 {
+    font-size: 1.5em;
+}
 
 .teamPic img {
     margin: 6%;

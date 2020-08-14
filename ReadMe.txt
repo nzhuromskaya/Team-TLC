@@ -14,3 +14,11 @@ When user search for recipes, five pictures will now be displayed instead of ins
 User can click on the recipe, and they will be redirected to a website with information of the recipe.
 The website has a new domain name: leftoverssecondlife.com.
 The site has SSL.
+
+Release 1.4
+Non-logged in users can search for recipes.
+Users can add recipes to the database.
+Admins can approve of recipes.
+Users can add and delete ingredients from inventory.
+Users can logout of the website.
+Users can navigate to inventory and add recipe with sidebar menu.

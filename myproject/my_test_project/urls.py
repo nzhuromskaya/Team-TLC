@@ -21,16 +21,16 @@ from django.conf import settings
 from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.homepage),
-    path('inventory', views.inventory),
-    path('aboutUs', views.aboutUsPage),
-    path('popularRecipes', views.popularRecipesPage),
-    path('login', views.login_auth),
-    path('index', views.homepage),
-    path('userP1', views.getRecipe),
-    path('index2', views.ind2Page),
-    path('signup', views.signup),
-    path('signUp', views.signUp),
-    path('recipe', views.recipePage),
+    path('', views.homepage, name='home1'),
+    path('inventory', views.inventory, name='inven'),
+    path('aboutUs', views.aboutUsPage, name='about'),
+    path('popularRecipes', views.popularRecipesPage, name='popular'),
+    path('login', views.login_auth, name='logs'),
+    path('index', views.homepage, name='home2'),
+    path('userP1', views.getRecipe, name='user'),
+    path('index2', views.ind2Page, name='inde2'),
+    path('signup', views.signup, name='sign1'),
+    path('signUp', views.signUp, name='sign2'),
+    path('recipe', views.recipePage, name='reci'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 

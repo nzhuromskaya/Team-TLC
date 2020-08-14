@@ -31,7 +31,7 @@
     <div class ="navigation">
         <nav>
             <span class ="nav1"> <a href= "index">Home</a></span>
-            <span class="nav1"> <a href="popularRecipes">Popular Recipes </a></span>
+            <span class="nav1"> <a href="popularRecipes">Search Recipes</a></span>
             <span class="nav1"> <a href ="aboutUs">About Us</a></span>
             <span class="nav1"> <a href="login">Login</a></span>
     </div>
@@ -46,10 +46,12 @@
                 <li class="sidebar-brand"> <a href="#">Home </a></li>
                 <li> <a href="#">Account Info</a></li>
                 <li> <a href="inventory">Inventory</a></li>
-                <li> <a href="index">Log out</a></li>
+		<li> <a href="recipe">Add a Recipe</a</li>
+		<li> <a href="#" onclick="javascript:logout();">Logout</a></li>
+
             </ul>
         </div>
-        <div class="page-content-wrapper">
+        <div class="page-content-wrapper" style="position: fixed;">
             <div class="container-fluid"><a class="btn btn-link" role="button" id="menu-toggle" href="#menu-toggle"><i class="fa fa-bars"></i></a>
                 <div class="row">
                     <div class="col-md-12">
@@ -64,24 +66,38 @@
     <script src="{% static 'assets/js/jquery.min.js' %}"></script>
     <script src="{% static 'assets/bootstrap/js/bootstrap.min.js' %}"></script>
     <script src="{% static 'assets/js/Sidebar-Menu.js' %}"></script>
-
+    
+    	<form method="POST" style="display: none;">
+		{%csrf_token%}
+		<input type="submit" name="log" id="log">
+	</form>
+	<script>
+		function logout(){
+			document.getElementById("log").click();
+		}
+	</script>
 
     <!-- Process user input-->
-    <!--- <form action="userP1.html" method="POST">
+    <!-- <form action="userP1.html" method="POST">
         <textarea name="recipe-desc" id="recipe-desc" cols="30" rows="10"></textarea>
         <button type ="submit" name="submitBtn" onclick ="onSubmit()">Submit:</button>
-    </form> --->
+    </form> -->
 
     <form method="POST">
+
 	    {% csrf_token %}
 	    <textarea  name="content" id="content" cols="30" rows="10"></textarea>
 	    <!--- <textarea cols="30" rows="10"></textarea> --->
 	    <button type="submit">Search</button>
 	    <h2>
             {% for link in links %}
+	    <center>
+	    <br>
+	    <h3> {{ link.name|linebreaksbr }} </h3>
             <a href= {{ link.url|linebreaksbr }} >
                 <img src= {{ link.img|linebreaksbr }}>
             </a>
+	    </center>
             {% endfor %}
 	    </h2>
     </form>

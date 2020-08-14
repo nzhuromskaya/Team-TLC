@@ -28,12 +28,14 @@ p {
 
 
 .carousel-item {
+    background-repeat: no-repeat;
+    margin-bottom: 1em;
     height: 75vh;
 }
 
 .carousel-caption {
     position: absolute;
-    top: 38%;
+    top: 28%;
     text-transform: uppercase;
 }
 

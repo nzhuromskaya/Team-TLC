@@ -19,7 +19,7 @@
     <div class ="navigation">
         <nav>
             <span class ="nav1"> <a href= "index">Home</a></span>
-            <span class="nav1"> <a href="popularRecipes">Popular Recipes </a></span>
+            <span class="nav1"> <a href="popularRecipes">Search Recipes </a></span>
             <span class="nav1"> <a href ="aboutUs">About Us</a></span>
             <span class="nav1"> <a href="login">Login</a></span>
     </div>
@@ -37,44 +37,68 @@
 <div class="row no-padding">
     <div class="col-sm-4">
         <div class="recipeOption">
-		<a /*href="{% static 'resources/images/rec1.jpg' %}"*/ href="#actual_recipe" /*target="_blank"*/>
+		<!--<a /*href="{% static 'resources/images/rec1.jpg' %}"*/ href="#actual_recipe" /*target="_blank"*/>
 			<img src="{% static 'resources/images/rec1.jpg' %}" alt="">
+		</a>-->
+
+                <a href= "https://www.epicurious.com/recipes/food/views/spicy-chicken-lettuce-wraps">
+			<img src="https://assets.epicurious.com/photos/5d11284cc4dc9e593ea79b38/6:4/w_620%2Ch_413/spicy-chicken-lettuce-wraps-recipe-BA-062419.jpg">
             </a>
+
         </div>
     </div>
     <div class="col-sm-4">
         <div class="recipeOption">
-		<a href="{% static 'resources/images/rec2.jpg' %}" target="_blank">
+		<!--<a href="{% static 'resources/images/rec2.jpg' %}" target="_blank">
 			<img src="{% static 'resources/images/rec2.jpg' %}" alt="">
+		</a>-->
+                <a href= "https://www.epicurious.com/recipes/food/views/sesame-pork-burgers-with-sweet-and-spicy-slaw">
+                        <img src="https://assets.epicurious.com/photos/5cb6041c3572782e652ccd3b/6:4/w_620%2Ch_413/Pork-Burgers-with-Crunchy-Quick-Pickled-Veg-recipe-100419.jpg">
             </a>
         </div>
     </div>
     <div class="col-sm-4">
         <div class="recipeOption">
-		<a href="{% static 'resources/images/rec3.jpg' %}" target="_blank">
+		<!--<a href="{% static 'resources/images/rec3.jpg' %}" target="_blank">
 			<img src="{% static 'resources/images/rec3.jpg' %}" alt="">
+            </a>-->
+                <a href= "https://www.epicurious.com/recipes/food/views/shawarma-spiced-tofu-pita-wraps">
+                        <img src="https://assets.epicurious.com/photos/5c8fc9eb1808bd2c8ed6ca7b/6:4/w_620%2Ch_413/Cook-This-Now-Torn-Tofu-Hero-Alt-05032019.jpg">
             </a>
         </div>
     </div>
     <div class="col-sm-4">
         <div class="recipeOption">
-		<a href="{% static 'resources/images/rec4.jpg' %}" target="_blank">
+		<!--<a href="{% static 'resources/images/rec4.jpg' %}" target="_blank">
 			<img src="{% static 'resources/images/rec4.jpg' %}" alt="">
+		</a>-->
+                <a href= "https://www.epicurious.com/recipes/food/views/creamy-one-pot-pasta-with-sausage-and-squash">
+                        <img src="https://assets.epicurious.com/photos/5c4204d2b71f4e481cb4c05e/6:4/w_620%2Ch_413/Small-Plates-No-Boil-Baked-Pasta-inset-in-pot-11012019.jpg">
             </a>
+
         </div>
     </div>
     <div class="col-sm-4">
         <div class="recipeOption">
-		<a href="{% static 'resources/images/rec5.jpg' %}" target="_blank">
+		<!--<a href="{% static 'resources/images/rec5.jpg' %}" target="_blank">
 			<img src="{% static 'resources/images/rec5.jpg' %}" alt="">
+		</a>-->
+               <a href= "https://www.epicurious.com/recipes/food/views/winter-italian-chopped-salad">
+                        <img src="https://assets.epicurious.com/photos/5c337ea7a24e8c2d5e490f65/6:4/w_620%2Ch_413/Winter-Chopped-Salad-recipe-04012019.jpg">
             </a>
+
         </div>
     </div>
     <div class="col-sm-4">
         <div class="recipeOption">
-		<a href="{% static 'resources/images/rec.6jpg' %}" target="_blank">
+		<!--<a href="{% static 'resources/images/rec.6jpg' %}" target="_blank">
 			<img src="{% static 'resources/images/rec6.jpg' %}" alt="">
+		</a>-->
+
+               <a href= "https://www.epicurious.com/recipes/food/views/olive-oil-apple-cake-with-spiced-sugar">
+                        <img src="https://assets.epicurious.com/photos/5da874a1261bd30008defff4/6:4/w_620%2Ch_413/OliveOilCake_HERO_100219_185.jpg">
             </a>
+
         </div>
     </div>
     <div class="narrow text-center">
@@ -89,21 +113,6 @@
 <!-- End Recipe Option Section -->
 
 </main>
-<div class ="container"> 
-    <div class="userGreet">
-        <h2>Hello User, Here is your recipe!</h2>
-    </div>
-    <div class ="recipePic" id="actual_recipe">
-        <div class="picContainer">
-		<img src="{% static 'resources/images/recipePic.jpg' %}" alt="">
-        </div>
-    </div>
-    
-    <div class="recipeDesc">
-        <h2> Title: Example</h2>
-    </div>
-</div >
-
 <script src="{% static 'assets/js/jquery.min.js' %}"></script>
 <script src="{% static 'assets/bootstrap/js/bootstrap.min.js' %}"></script>
 
@@ -111,7 +120,7 @@
 <footer>
 <div class="row justifty-content-center">
     <div class="col-md-5 text-center">
-        <p>Here is our footer</p>
+        <p style="margin: 0 auto;" >© Team-TLC 2020</p>
     </div>
 </div>
 

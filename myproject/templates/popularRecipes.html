@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SecondLife - Popular Recipes</title>
+    <title>SecondLife - Search Recipes</title>
     <link rel="stylesheet" href="{% static 'resources/styles/styles.css' %}" type="text/css">
     <link rel="stylesheet" href="{% static 'resources/styles/popularstyles.css' %}" type="text/css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
@@ -18,7 +18,7 @@
     <div class ="navigation">
         <nav>
             <span class ="nav1"> <a href= "index">Home</a></span>
-            <span class="nav1"> <a href="popularRecipes">Popular Recipes</a></span>
+            <span class="nav1"> <a href="popularRecipes">Search Recipes</a></span>
             <span class="nav1"> <a href ="aboutUs">About Us</a></span>
             <span class="nav1"> <a href="login">Login</a></span>
     </div>
@@ -75,20 +75,24 @@
         <!-- Slide 1 -->
 	{% for link in links  %}
 	{% if link.count == 0 %}
-	<div class="carousel-item active" style="background-image: url({{link.img|linebreaksbr}})">
+	<div class="carousel-item active" style="background-image: url({% static 'resources/images/aboutUsBackgroundPic.jpg' %})">
             <div class="carousel-caption text-center">
-		<h1>{{link.title|linebreaksbr}}</h1>
-		<a class="btn btn-outline-light btn-lg" href={{link.url|linebreaksbr}}>Link to Recipe</a>
+		    <h3>{{ link.name }}</h3>
+		<img src="{{link.img}}">
+		<br>
+		<a class="btn btn-outline-light btn-lg" href={{link.url|linebreaksbr}}>Link to Recipe</a> 
             </div>
         </div>
-	{% endif  %}
-        <div class="carousel-item" style="background-image: url({{link.img|linebreaksbr}})">
+	{% else%}
+        <div class="carousel-item" style="background-image: url({% static 'resources/images/aboutUsBackgroundPic.jpg' %})">
             <div class="carousel-caption text-center">
-                <h1>{{link.title|linebreaksbr}}</h1>
+		    <h3>{{link.name}}</h3>
+		    <img src="{{link.img}}">
+		    <br>
                 <a class="btn btn-outline-light btn-lg" href={{link.url|linebreaksbr}}>Link to Recipe</a>
             </div>
         </div>
-
+	{% endif %}
 	{% endfor %}
         <!-- Slide 2 -->
         <!-- <div class="carousel-item" style="background-color:darkseagreen">
