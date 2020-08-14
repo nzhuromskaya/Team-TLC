@@ -12,13 +12,25 @@ from django.contrib.auth.forms import UserCreationForm
 from django.apps import apps
 from django.contrib.auth.decorators import login_required
 
-'''
-    hompage(request) renders the homepage
-'''
+
 def homepage(request):
+    '''
+    Name: homepage
+    Description: renders the homepage
+    Parameter: request - the views request
+    Returns: the render of index.html
+    '''
+
     return render(request, 'index.html')
 
 def signUp(request):
+    '''
+    Name: signUp
+    Description: renders the signup page. If form submitted, this function creates the account and redirects to /userP1.
+    Parameter: request - the views request
+    Returns: the render of signUp.html and signup form for user
+    '''
+
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
         if form.is_valid():
@@ -33,13 +45,31 @@ def signUp(request):
     return render(request, 'signUp.html', {'form': form})
 
 def inventory(request):
+    '''
+    Name: inventory
+    Description: It renders the inventory page. Test only.
+    Parameter: request - the views request
+    Returns: the render of inventory.html
+    '''
     return render(request, 'inventory.html')
 
 def aboutUsPage(request):
+    '''
+    Name: aboutUsPage
+    Desciption: It renders the aboutUsPage page.
+    Parameter: request - the views request
+    Reutrn: - the render of aboutUs.html
+    '''
     return render(request, 'aboutUs.html')
 
 @login_required
 def recipePage(request):
+    '''
+    Name: recipePage
+    Description: It renders the Search Recipe Page. Also, this function uses the information inputed by the user and gets the information from the API.
+    Parameter: request - the views request
+    Return: the render of populatRecipes.html and recipe information.
+    '''
     User_Recipe = apps.get_model('new', 'User_Recipe')
     data = User_Recipe.objects.all()
 
@@ -216,6 +246,12 @@ def login_auth(request):
 
 @login_required
 def inventory(request):
+    '''
+    Name: inventory
+    Description: It renders inventory. Also, it handles adding a user's recipe to the database, but does not approve of it. The Admin is the only user able to do that.
+    Parameter: request - the view request
+    Return: The render of inventory.html and recipe information.
+    '''
     if request.user.is_authenticated:
         Ingredient = apps.get_model('new', 'Ingredient')
         data = Ingredient.objects.all()
@@ -249,13 +285,32 @@ def inventory(request):
     return render(request, 'inventory.html')
 
 def usPage(request):
+    '''
+    Name: usPage
+    Description: This renders userP1 page. Test only.
+    Parameter: request - the view request
+    Returns: the render of userP1.html
+    '''
     return render(request, 'userP1.html')
 
 def ind2Page(request):
+    '''
+    Name: ind2Page
+    Description: This renders index2 page. Test only.
+    Parameter: request - the view request
+    Returns: the render of index2.html
+    '''
+
     return render(request, 'index2.html')
 
 @login_required
 def getRecipe(request):
+    '''
+    Name: getRecipe
+    Description: This renders userP1 page. This retrieves input from the user, and the API gathers the recipe information.
+    Parameter: request - the view request
+    Returns: the render of userP1.html and the recipe information.
+    '''
 
     form = userP1form()
     args = {'form': form}
