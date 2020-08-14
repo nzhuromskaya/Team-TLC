@@ -12,6 +12,9 @@ from django.contrib.auth.forms import UserCreationForm
 from django.apps import apps
 from django.contrib.auth.decorators import login_required
 
+'''
+    hompage(request) renders the homepage
+'''
 def homepage(request):
     return render(request, 'index.html')
 
