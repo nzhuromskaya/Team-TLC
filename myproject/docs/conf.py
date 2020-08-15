@@ -13,7 +13,6 @@
 # import os
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
-
 import os
 import sys
 import django
@@ -24,8 +23,8 @@ django.setup()
 # -- Project information -----------------------------------------------------
 
 project = 'Leftovers Second Life'
-copyright = '2020, Adele, Sean, Nataliya, Uy'
-author = 'Adele, Sean, Nataliya, Uy'
+copyright = '2020, Adele, Uy, Nataliya, Sean'
+author = 'Adele, Uy, Nataliya, Sean'
 
 # The full version, including alpha/beta/rc tags
 release = '1.14'
