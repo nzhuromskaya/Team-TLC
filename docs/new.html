@@ -39,12 +39,12 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="new.migrations.html">new.migrations package</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="new.migrations.html#submodules">Submodules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="new.migrations.html#new-migrations-0001-initial-module">new.migrations.0001_initial module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="new.migrations.html#new-migrations-0002-ingredient-user-name-module">new.migrations.0002_ingredient_user_name module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="new.migrations.html#new-migrations-0003-user-recipe-module">new.migrations.0003_user_recipe module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="new.migrations.html#new-migrations-0004-user-recipe-author-module">new.migrations.0004_user_recipe_author module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="new.migrations.html#new-migrations-0005-auto-20200812-1832-module">new.migrations.0005_auto_20200812_1832 module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="new.migrations.html#module-contents">Module contents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="new.migrations.html#module-new.migrations.0001_initial">new.migrations.0001_initial module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="new.migrations.html#module-new.migrations.0002_ingredient_user_name">new.migrations.0002_ingredient_user_name module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="new.migrations.html#module-new.migrations.0003_user_recipe">new.migrations.0003_user_recipe module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="new.migrations.html#module-new.migrations.0004_user_recipe_author">new.migrations.0004_user_recipe_author module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="new.migrations.html#module-new.migrations.0005_auto_20200812_1832">new.migrations.0005_auto_20200812_1832 module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="new.migrations.html#module-new.migrations">Module contents</a></li>
 </ul>
 </li>
 </ul>
@@ -53,23 +53,159 @@
 <div class="section" id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
 </div>
-<div class="section" id="new-admin-module">
-<h2>new.admin module<a class="headerlink" href="#new-admin-module" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-new.admin">
+<span id="new-admin-module"></span><h2>new.admin module<a class="headerlink" href="#module-new.admin" title="Permalink to this headline">¶</a></h2>
 </div>
-<div class="section" id="new-apps-module">
-<h2>new.apps module<a class="headerlink" href="#new-apps-module" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-new.apps">
+<span id="new-apps-module"></span><h2>new.apps module<a class="headerlink" href="#module-new.apps" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="new.apps.NewConfig">
+<em class="property">class </em><code class="sig-prename descclassname">new.apps.</code><code class="sig-name descname">NewConfig</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">app_name</span></em>, <em class="sig-param"><span class="n">app_module</span></em><span class="sig-paren">)</span><a class="headerlink" href="#new.apps.NewConfig" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.apps.config.AppConfig</span></code></p>
+<dl class="py attribute">
+<dt id="new.apps.NewConfig.name">
+<code class="sig-name descname">name</code><em class="property"> = 'new'</em><a class="headerlink" href="#new.apps.NewConfig.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </div>
-<div class="section" id="new-models-module">
-<h2>new.models module<a class="headerlink" href="#new-models-module" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-new.models">
+<span id="new-models-module"></span><h2>new.models module<a class="headerlink" href="#module-new.models" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="new.models.Ingredient">
+<em class="property">class </em><code class="sig-prename descclassname">new.models.</code><code class="sig-name descname">Ingredient</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#new.models.Ingredient" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.db.models.base.Model</span></code></p>
+<p>Models for Ingredients for the users</p>
+<dl class="py exception">
+<dt id="new.models.Ingredient.DoesNotExist">
+<em class="property">exception </em><code class="sig-name descname">DoesNotExist</code><a class="headerlink" href="#new.models.Ingredient.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.core.exceptions.ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt id="new.models.Ingredient.MultipleObjectsReturned">
+<em class="property">exception </em><code class="sig-name descname">MultipleObjectsReturned</code><a class="headerlink" href="#new.models.Ingredient.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.core.exceptions.MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="new.models.Ingredient.id">
+<code class="sig-name descname">id</code><a class="headerlink" href="#new.models.Ingredient.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="new.models.Ingredient.name">
+<code class="sig-name descname">name</code><a class="headerlink" href="#new.models.Ingredient.name" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="new.models.Ingredient.objects">
+<code class="sig-name descname">objects</code><em class="property"> = &lt;django.db.models.manager.Manager object&gt;</em><a class="headerlink" href="#new.models.Ingredient.objects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="new.models.Ingredient.quantity">
+<code class="sig-name descname">quantity</code><a class="headerlink" href="#new.models.Ingredient.quantity" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="new.models.Ingredient.user_name">
+<code class="sig-name descname">user_name</code><a class="headerlink" href="#new.models.Ingredient.user_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="new.models.User_Recipe">
+<em class="property">class </em><code class="sig-prename descclassname">new.models.</code><code class="sig-name descname">User_Recipe</code><span class="sig-paren">(</span><em class="sig-param"><span class="o">*</span><span class="n">args</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#new.models.User_Recipe" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.db.models.base.Model</span></code></p>
+<p>Models for User recipes for the users</p>
+<dl class="py exception">
+<dt id="new.models.User_Recipe.DoesNotExist">
+<em class="property">exception </em><code class="sig-name descname">DoesNotExist</code><a class="headerlink" href="#new.models.User_Recipe.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.core.exceptions.ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt id="new.models.User_Recipe.MultipleObjectsReturned">
+<em class="property">exception </em><code class="sig-name descname">MultipleObjectsReturned</code><a class="headerlink" href="#new.models.User_Recipe.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.core.exceptions.MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="new.models.User_Recipe.approved">
+<code class="sig-name descname">approved</code><a class="headerlink" href="#new.models.User_Recipe.approved" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="new.models.User_Recipe.author">
+<code class="sig-name descname">author</code><a class="headerlink" href="#new.models.User_Recipe.author" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="new.models.User_Recipe.description">
+<code class="sig-name descname">description</code><a class="headerlink" href="#new.models.User_Recipe.description" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="new.models.User_Recipe.id">
+<code class="sig-name descname">id</code><a class="headerlink" href="#new.models.User_Recipe.id" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="new.models.User_Recipe.ingredients">
+<code class="sig-name descname">ingredients</code><a class="headerlink" href="#new.models.User_Recipe.ingredients" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="new.models.User_Recipe.objects">
+<code class="sig-name descname">objects</code><em class="property"> = &lt;django.db.models.manager.Manager object&gt;</em><a class="headerlink" href="#new.models.User_Recipe.objects" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="new.models.User_Recipe.steps">
+<code class="sig-name descname">steps</code><a class="headerlink" href="#new.models.User_Recipe.steps" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="new.models.User_Recipe.title">
+<code class="sig-name descname">title</code><a class="headerlink" href="#new.models.User_Recipe.title" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+</dd></dl>
+
 </div>
-<div class="section" id="new-tests-module">
-<h2>new.tests module<a class="headerlink" href="#new-tests-module" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-new.tests">
+<span id="new-tests-module"></span><h2>new.tests module<a class="headerlink" href="#module-new.tests" title="Permalink to this headline">¶</a></h2>
 </div>
-<div class="section" id="new-views-module">
-<h2>new.views module<a class="headerlink" href="#new-views-module" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-new.views">
+<span id="new-views-module"></span><h2>new.views module<a class="headerlink" href="#module-new.views" title="Permalink to this headline">¶</a></h2>
 </div>
-<div class="section" id="module-contents">
-<h2>Module contents<a class="headerlink" href="#module-contents" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-new">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-new" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 

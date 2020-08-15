@@ -36,23 +36,108 @@
 <div class="section" id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
 </div>
-<div class="section" id="new-migrations-0001-initial-module">
-<h2>new.migrations.0001_initial module<a class="headerlink" href="#new-migrations-0001-initial-module" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-new.migrations.0001_initial">
+<span id="new-migrations-0001-initial-module"></span><h2>new.migrations.0001_initial module<a class="headerlink" href="#module-new.migrations.0001_initial" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="new.migrations.0001_initial.Migration">
+<em class="property">class </em><code class="sig-prename descclassname">new.migrations.0001_initial.</code><code class="sig-name descname">Migration</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">app_label</span></em><span class="sig-paren">)</span><a class="headerlink" href="#new.migrations.0001_initial.Migration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.db.migrations.migration.Migration</span></code></p>
+<dl class="py attribute">
+<dt id="new.migrations.0001_initial.Migration.dependencies">
+<code class="sig-name descname">dependencies</code><em class="property"> = []</em><a class="headerlink" href="#new.migrations.0001_initial.Migration.dependencies" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="new.migrations.0001_initial.Migration.initial">
+<code class="sig-name descname">initial</code><em class="property"> = True</em><a class="headerlink" href="#new.migrations.0001_initial.Migration.initial" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="new.migrations.0001_initial.Migration.operations">
+<code class="sig-name descname">operations</code><em class="property"> = [&lt;CreateModel  name='Ingredient', fields=[('id', &lt;django.db.models.fields.AutoField&gt;), ('name', &lt;django.db.models.fields.CharField&gt;), ('quantity', &lt;django.db.models.fields.CharField&gt;)]&gt;]</em><a class="headerlink" href="#new.migrations.0001_initial.Migration.operations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </div>
-<div class="section" id="new-migrations-0002-ingredient-user-name-module">
-<h2>new.migrations.0002_ingredient_user_name module<a class="headerlink" href="#new-migrations-0002-ingredient-user-name-module" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-new.migrations.0002_ingredient_user_name">
+<span id="new-migrations-0002-ingredient-user-name-module"></span><h2>new.migrations.0002_ingredient_user_name module<a class="headerlink" href="#module-new.migrations.0002_ingredient_user_name" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="new.migrations.0002_ingredient_user_name.Migration">
+<em class="property">class </em><code class="sig-prename descclassname">new.migrations.0002_ingredient_user_name.</code><code class="sig-name descname">Migration</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">app_label</span></em><span class="sig-paren">)</span><a class="headerlink" href="#new.migrations.0002_ingredient_user_name.Migration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.db.migrations.migration.Migration</span></code></p>
+<dl class="py attribute">
+<dt id="new.migrations.0002_ingredient_user_name.Migration.dependencies">
+<code class="sig-name descname">dependencies</code><em class="property"> = [('new', '0001_initial')]</em><a class="headerlink" href="#new.migrations.0002_ingredient_user_name.Migration.dependencies" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="new.migrations.0002_ingredient_user_name.Migration.operations">
+<code class="sig-name descname">operations</code><em class="property"> = [&lt;AddField  model_name='ingredient', name='user_name', field=&lt;django.db.models.fields.CharField&gt;, preserve_default=False&gt;]</em><a class="headerlink" href="#new.migrations.0002_ingredient_user_name.Migration.operations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </div>
-<div class="section" id="new-migrations-0003-user-recipe-module">
-<h2>new.migrations.0003_user_recipe module<a class="headerlink" href="#new-migrations-0003-user-recipe-module" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-new.migrations.0003_user_recipe">
+<span id="new-migrations-0003-user-recipe-module"></span><h2>new.migrations.0003_user_recipe module<a class="headerlink" href="#module-new.migrations.0003_user_recipe" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="new.migrations.0003_user_recipe.Migration">
+<em class="property">class </em><code class="sig-prename descclassname">new.migrations.0003_user_recipe.</code><code class="sig-name descname">Migration</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">app_label</span></em><span class="sig-paren">)</span><a class="headerlink" href="#new.migrations.0003_user_recipe.Migration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.db.migrations.migration.Migration</span></code></p>
+<dl class="py attribute">
+<dt id="new.migrations.0003_user_recipe.Migration.dependencies">
+<code class="sig-name descname">dependencies</code><em class="property"> = [('new', '0002_ingredient_user_name')]</em><a class="headerlink" href="#new.migrations.0003_user_recipe.Migration.dependencies" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="new.migrations.0003_user_recipe.Migration.operations">
+<code class="sig-name descname">operations</code><em class="property"> = [&lt;CreateModel  name='User_Recipe', fields=[('id', &lt;django.db.models.fields.AutoField&gt;), ('title', &lt;django.db.models.fields.CharField&gt;), ('ingredients', &lt;django.db.models.fields.CharField&gt;), ('description', &lt;django.db.models.fields.CharField&gt;), ('steps', &lt;django.db.models.fields.CharField&gt;), ('approved', &lt;django.db.models.fields.BooleanField&gt;)]&gt;]</em><a class="headerlink" href="#new.migrations.0003_user_recipe.Migration.operations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </div>
-<div class="section" id="new-migrations-0004-user-recipe-author-module">
-<h2>new.migrations.0004_user_recipe_author module<a class="headerlink" href="#new-migrations-0004-user-recipe-author-module" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-new.migrations.0004_user_recipe_author">
+<span id="new-migrations-0004-user-recipe-author-module"></span><h2>new.migrations.0004_user_recipe_author module<a class="headerlink" href="#module-new.migrations.0004_user_recipe_author" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="new.migrations.0004_user_recipe_author.Migration">
+<em class="property">class </em><code class="sig-prename descclassname">new.migrations.0004_user_recipe_author.</code><code class="sig-name descname">Migration</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">app_label</span></em><span class="sig-paren">)</span><a class="headerlink" href="#new.migrations.0004_user_recipe_author.Migration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.db.migrations.migration.Migration</span></code></p>
+<dl class="py attribute">
+<dt id="new.migrations.0004_user_recipe_author.Migration.dependencies">
+<code class="sig-name descname">dependencies</code><em class="property"> = [('new', '0003_user_recipe')]</em><a class="headerlink" href="#new.migrations.0004_user_recipe_author.Migration.dependencies" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="new.migrations.0004_user_recipe_author.Migration.operations">
+<code class="sig-name descname">operations</code><em class="property"> = [&lt;AddField  model_name='user_recipe', name='author', field=&lt;django.db.models.fields.CharField&gt;&gt;]</em><a class="headerlink" href="#new.migrations.0004_user_recipe_author.Migration.operations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </div>
-<div class="section" id="new-migrations-0005-auto-20200812-1832-module">
-<h2>new.migrations.0005_auto_20200812_1832 module<a class="headerlink" href="#new-migrations-0005-auto-20200812-1832-module" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-new.migrations.0005_auto_20200812_1832">
+<span id="new-migrations-0005-auto-20200812-1832-module"></span><h2>new.migrations.0005_auto_20200812_1832 module<a class="headerlink" href="#module-new.migrations.0005_auto_20200812_1832" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="new.migrations.0005_auto_20200812_1832.Migration">
+<em class="property">class </em><code class="sig-prename descclassname">new.migrations.0005_auto_20200812_1832.</code><code class="sig-name descname">Migration</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">app_label</span></em><span class="sig-paren">)</span><a class="headerlink" href="#new.migrations.0005_auto_20200812_1832.Migration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">django.db.migrations.migration.Migration</span></code></p>
+<dl class="py attribute">
+<dt id="new.migrations.0005_auto_20200812_1832.Migration.dependencies">
+<code class="sig-name descname">dependencies</code><em class="property"> = [('new', '0004_user_recipe_author')]</em><a class="headerlink" href="#new.migrations.0005_auto_20200812_1832.Migration.dependencies" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="new.migrations.0005_auto_20200812_1832.Migration.operations">
+<code class="sig-name descname">operations</code><em class="property"> = [&lt;AlterField  model_name='user_recipe', name='description', field=&lt;django.db.models.fields.TextField&gt;&gt;, &lt;AlterField  model_name='user_recipe', name='ingredients', field=&lt;django.db.models.fields.TextField&gt;&gt;, &lt;AlterField  model_name='user_recipe', name='steps', field=&lt;django.db.models.fields.TextField&gt;&gt;]</em><a class="headerlink" href="#new.migrations.0005_auto_20200812_1832.Migration.operations" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </div>
-<div class="section" id="module-contents">
-<h2>Module contents<a class="headerlink" href="#module-contents" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="module-new.migrations">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-new.migrations" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 
